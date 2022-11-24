@@ -1,36 +1,28 @@
 @extends('layout')
 @section('content')
-    <div class="bg-gray-300 min-h-screen">
-        <div class="max-w-7xl mx-auto bg-white flex flex-col px-10 min-h-screen py-10 gap-10">
-            <div class="">
-                <h1 class="text-lg font-semibold">judul</h1>
-                <span class="text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, tempore.</span>
-            </div>
-
-            <div class="">
-                <h1 class="text-lg font-semibold">judul</h1>
-                <span class="text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, tempore.</span>
-            </div>
-
-            <div class="">
-                <h1 class="text-lg font-semibold">judul</h1>
-                <span class="text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, tempore.</span>
-            </div>
-
-            <div class="">
-                <h1 class="text-lg font-semibold">judul</h1>
-                <span class="text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, tempore.</span>
-            </div>
-
-            <div class="">
-                <h1 class="text-lg font-semibold">judul</h1>
-                <span class="text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, tempore.</span>
-            </div>
-
-            <div class="">
-                <h1 class="text-lg font-semibold">judul</h1>
-                <span class="text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, tempore.</span>
-            </div>
-        </div>
-    </div>
+<div class="bg-gray-100">
+  <table class="bg-black-100">
+    <tr>
+        <th class="px-4 py-2 border">No</th>
+        <th class="px-4 py-2 border">Judul</th>
+        <th class="px-4 py-2 border">Konten</th>
+        <th class="px-4 py-2 border">Aksi</th>
+    </tr>
+    <tr>
+      @forelse ($konten as $item => $item)
+      <th class="px-4 py-2 border"{{ $index + 1}}></th>
+      <th class="px-4 py-2 border"{{ $item->judul}}></th>
+      <th class="px-4 py-2 border"{{ $item->konten}}></th>
+      <th class="px-4 py-2 border">
+          <div>
+            <a href="">Edit</a>
+            <a href="">Delete</a>
+          </div>
+      </th>
+      @empty
+          <th colspan="12" class="px-4 py-2 border">tidak ada konten</th>
+      @endforelse
+    </tr>
+    <table>
+</div>
 @endsection
